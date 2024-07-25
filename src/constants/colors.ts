@@ -1,5 +1,11 @@
 const colors = {
   WHITE: '#fff',
+  BLACK: '#000',
+  GRAY_200: '#E7E7E7',
+  GRAY_500: '#8E8E8E',
+  GRAY_700: '#575757',
+  RED_300: '#FFB4B4',
+  RED_500: '#FF5F5F',
   INDIGO_50: '#E8F5E9',
   INDIGO_100: '#C5CAE9',
   INDIGO_200: '#9FA8DA',

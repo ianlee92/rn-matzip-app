@@ -1,0 +1,15 @@
+const colors = {
+  WHITE: 'fff',
+  INDIGO_50: '#E8F5E9',
+  INDIGO_100: '#C5CAE9',
+  INDIGO_200: '#9FA8DA',
+  INDIGO_300: '#7986CB',
+  INDIGO_400: '#5C6BC0',
+  INDIGO_500: '#3F51B5',
+  INDIGO_600: '#3949AB',
+  INDIGO_700: '#303F9F',
+  INDIGO_800: '#283593',
+  INDIGO_900: '#1A237E',
+};
+
+export {colors};

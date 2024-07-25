@@ -50,8 +50,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   image: {
-    width: '100%',
-    height: '50%',
+    width: Dimensions.get('screen').width / 2,
+    height: Dimensions.get('screen').width / 2,
   },
   buttonContainer: {
     flex: 1,

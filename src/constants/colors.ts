@@ -1,5 +1,5 @@
 const colors = {
-  WHITE: 'fff',
+  WHITE: '#fff',
   INDIGO_50: '#E8F5E9',
   INDIGO_100: '#C5CAE9',
   INDIGO_200: '#9FA8DA',

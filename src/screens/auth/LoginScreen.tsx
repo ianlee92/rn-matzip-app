@@ -3,14 +3,28 @@ import {StyleSheet, View, Text, SafeAreaView} from 'react-native';
 import InputField from '../../components/InputField';
 
 function LoginScreen() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [values, setValues] = useState({
+    email: '',
+    password: '',
+  });
 
-  const handleChangeEmail = (text: string) => {
-    setEmail(text);
+  const [touched, setTouched] = useState({
+    email: false,
+    password: false,
+  });
+
+  const handleChangeValues = (name: string, text: string) => {
+    setValues({
+      ...values,
+      [name]: text,
+    });
   };
-  const handleChangePassword = (text: string) => {
-    setPassword(text);
+
+  const handleBlur = (name: string) => {
+    setTouched({
+      ...touched,
+      [name]: true,
+    });
   };
 
   return (
@@ -19,16 +33,20 @@ function LoginScreen() {
         <InputField
           placeholder="이메일"
           error={'이메일을 입력하세요'}
+          touched={touched.email}
           inputMode="email"
-          value={email}
-          onChangeText={handleChangeEmail}
+          value={values.email}
+          onChangeText={text => handleChangeValues('email', text)}
+          onBlur={() => handleBlur('email')}
         />
         <InputField
           placeholder="비밀번호"
           error={'비밀번호를 입력하세요'}
+          touched={touched.password}
           secureTextEntry
-          value={password}
-          onChangeText={handleChangePassword}
+          value={values.password}
+          onChangeText={text => handleChangeValues('password', text)}
+          onBlur={() => handleBlur('password')}
         />
       </View>
     </SafeAreaView>

@@ -9,6 +9,7 @@ import {
   View,
 } from 'react-native';
 import {colors} from '../constants';
+import {mergeRefs} from '../utils';
 
 interface InputFieldProps extends TextInputProps {
   disabled?: boolean;
@@ -37,7 +38,7 @@ const InputField = forwardRef(
             touched && Boolean(error) && styles.inputError,
           ]}>
           <TextInput
-            ref={innerRef}
+            ref={ref ? mergeRefs(innerRef, ref) : innerRef}
             editable={!disabled}
             placeholderTextColor={colors.GRAY_500}
             style={[styles.input, disabled && styles.disabled]}

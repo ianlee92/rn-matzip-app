@@ -14,10 +14,14 @@ function SignupScreen() {
     initialValue: {email: '', password: '', passwordConfirm: ''},
     validate: validateSignup,
   });
+  const handleSubmit = () => {
+    console.log(signup.values);
+  };
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.inputContainer}>
         <InputField
+          autoFocus
           placeholder="이메일"
           error={signup.errors.email}
           touched={signup.touched.email}
@@ -30,6 +34,7 @@ function SignupScreen() {
         <InputField
           ref={passwordRef}
           placeholder="비밀번호"
+          textContentType="oneTimeCode"
           error={signup.errors.password}
           touched={signup.touched.password}
           secureTextEntry
@@ -44,10 +49,11 @@ function SignupScreen() {
           error={signup.errors.passwordConfirm}
           touched={signup.touched.passwordConfirm}
           secureTextEntry
+          onSubmitEditing={handleSubmit}
           {...signup.getTextInputProps('passwordConfirm')}
         />
       </View>
-      <CustomButton label="회원가입" />
+      <CustomButton label="회원가입" onPress={handleSubmit} />
     </SafeAreaView>
   );
 }
